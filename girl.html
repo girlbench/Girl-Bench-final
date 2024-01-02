@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .content {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 25px;
+        max-width: 50%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: deeppink;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: 550px;
+        text-align:start;
+    }
+
+    ul {
+        color: #000000;
+        font-size: 25px;
+    }
+
+    header {
+        margin-top: 180px;
+        border-radius: 8px;
+        width: 52%;
+        margin-left: 24%;
+        text-align: center;
+        font-size: 100px;
+        background-color: #5e17eb;
+        color: deeppink;
+    }
+
+    body {
+        background-color: hotpink;
+    }
+
+    #botaoVoltar {
+        display: inline-block;
+        padding: 10px;
+        font-size: 16px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .seta {
+        width: 40px;
+        background-color: transparent;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .content {
+            max-width: 80%;
+        }
+
+        header {
+            font-size: 60px;
+            width: 80%;
+            margin-left: 10%;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .content {
+            max-width: 100%;
+            font-size: 18px;
+            height: auto; 
+            padding: 10px; 
+        }
+
+        header {
+            font-size: 40px; 
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" id="botaoVoltar"><img class="seta" src="—Pngtree—left arrow line black icon_4008085.png" alt=""></a>
+        GIRL BEACH
+    </header>
+    <div class="content">
+        <p>O Banco Girl Bench é a escolha certa para suas necessidades financeiras. Somos um banco de confiança que se preocupa com o seu sucesso financeiro.</p>
+        <p>Nossos principais pontos fortes:</p>
+        <ul>
+            <li>Solidez e Confiança</li>
+            <li>Rendimento Financeiro Atrativo</li>
+            <li>Atendimento Personalizado</li>
+            <li>Investimentos Seguros</li>
+        </ul>
+        <p>Estamos aqui para ajudar você a fazer seu dinheiro render. Seja para poupança, investimentos ou empréstimos, o Banco Girl Beach está comprometido com a excelência em serviços financeiros.</p>
+    </div>
+    <script>
+        document.querySelector('.content').style.backgroundColor = 'lightblue';
+        document.querySelector('header').style.fontSize = '60px';
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls Bench - Painel Bancário</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: hotpink;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: deeppink;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        aside {
+            width: 200px;
+            background-color: plum;
+            padding: 20px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .info-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px;
+            background-color: hotpink;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: deeppink;
+        }
+        #botaoVoltar {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .seta{
+            width: 40px;
+            
+        }
+        @media only screen and (max-width: 768px) {
+        nav ul {
+            text-align: center;
+        }
+
+        nav ul li {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        aside {
+            width: 100%;
+        }
+
+        #botaoVoltar {
+            position: static;
+            margin-bottom: 20px;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        header, nav {
+            padding: 15px 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        nav a {
+            font-size: 14px;
+        }
+
+        .info-box {
+            padding: 10px;
+        }
+
+        .button {
+            padding: 8px;
+        }
+
+        .seta {
+            width: 30px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" id="botaoVoltar"><img class="seta" src="—Pngtree—left arrow line black icon_4008085.png" alt=""></a>
+        <h1>Girls Bench - Painel de Controle</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Saldo</a></li>
+            <li><a href="#">Pagamentos</a></li>
+            <li><a href="#">2ª Via de Boleto</a></li>
+            <li><a href="#">Desbloqueio de Cartão</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#">Histórico de Transações</a></li>
+                <li><a href="#">Configurações de Conta</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="info-box">
+                <h2>Saldo Atual</h2>
+                <p>R$ 0.00</p>
+                <button class="button" onclick="exibirExtrato()">Ver Extrato</button>
+            </div>
+
+            <div class="info-box">
+                <h2>Pagamentos Pendentes</h2>
+                <p>Você não tem pagamentos pendentes.</p>
+            </div>
+
+            <div class="info-box">
+                <h2>Desbloqueio de Cartão</h2>
+                <p>Seu cartão está atualmente bloqueado. Deseja desbloqueá-lo?</p>
+                <button class="button" onclick="exibirDesbloqueioCartao()">Desbloquear Cartão</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function exibirExtrato() {
+            alert("Exibindo Extrato");
+        }
+
+        function exibirDesbloqueioCartao() {
+            alert("Desbloqueando Cartão");
+        }
+    </script>
+</body>
+</html>

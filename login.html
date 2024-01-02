@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width", initial-scale="1.0">
+    <title>Girls Bench - Login</title>
+
+    <style>
+        body {
+            background-color: #5e17eb;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 100px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container img {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: hotpink;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: deeppink;
+        }
+
+        
+        .login-form a {
+            display: block;
+            margin-top: 10px;
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+        #botaoVoltar {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .seta{
+            width: 40px;
+            background-color: transparent;
+        }
+        .error {
+            color:#555353bc;
+            font-size: 14px;
+            margin-top: -10px;
+        }
+
+        .error-highlight {
+            border: 2px solid #f0f0f0;
+        }
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 30px;
+            }
+
+            .login-container img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html" id="botaoVoltar"><img class="seta" src="—Pngtree—left arrow line black icon_4008085.png" alt=""></a>
+    <div class="login-container">
+        <img src="be.png">
+        <div class="login-form">
+            <input type="text" id="email" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+            <div class="error" id="email-required-error" style="display: block;">
+                
+            </div>
+            <div class="error" id="email-invalid-error" style="display: none;">
+                Email inválido
+            </div>
+            <div class="error" id="password-required-error" style="display: block;">
+                
+            </div>
+            <div class="error" id="password-min-length-error" style="display: none;">
+                Senha deve conter pelo menos 8 caracteres
+            </div>
+            <div id="login-success-message" class="error" style="display: none;">
+                Credenciais válidas. Bem-vindo!
+            </div>
+            <button onclick="validateForm()">Login</button>
+            <a href="cadastro.html">Cadastrar</a>
+            <a href="#">Esqueci minha senha</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const emailRequiredError = document.getElementById('email-required-error');
+            const emailInvalidError = document.getElementById('email-invalid-error');
+            const passwordRequiredError = document.getElementById('password-required-error');
+            const passwordMinLengthError = document.getElementById('password-min-length-error');
+            const successMessage = document.getElementById('login-success-message');
+
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            function displayError(element, errorElement) {
+                element.classList.add('error-highlight');
+                errorElement.style.display = 'block';
+            }
+
+            function hideError(element, errorElement) {
+                element.classList.remove('error-highlight');
+                errorElement.style.display = 'none';
+            }
+
+            function simulateAuthentication(email, password) {
+                return true;
+            }
+
+            function validateForm() {
+                hideError(emailInput, emailRequiredError);
+                hideError(emailInput, emailInvalidError);
+                hideError(passwordInput, passwordRequiredError);
+                hideError(passwordInput, passwordMinLengthError);
+
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
+
+                if (!emailValue) {
+                    displayError(emailInput, emailRequiredError);
+                } else if (!validateEmail(emailValue)) {
+                    displayError(emailInput, emailInvalidError);
+                }
+
+                if (!passwordValue) {
+                    displayError(passwordInput, passwordRequiredError);
+                } else if (passwordValue.length < 8) {
+                    displayError(passwordInput, passwordMinLengthError);
+                } else {
+                    if (simulateAuthentication(emailValue, passwordValue)) {
+                        hideError(emailInput, emailRequiredError);
+                        hideError(emailInput, emailInvalidError);
+                        hideError(passwordInput, passwordRequiredError);
+                        hideError(passwordInput, passwordMinLengthError);
+
+                        successMessage.style.display = 'block';
+                    } else {
+                        alert('Credenciais inválidas. Tente novamente.');
+                    }
+                }
+            }
+
+            function handleEmailInput() {
+                hideError(emailInput, emailRequiredError);
+                hideError(emailInput, emailInvalidError);
+                hideError(passwordInput, passwordMinLengthError);
+            }
+
+            emailInput.addEventListener('input', handleEmailInput);
+            passwordInput.addEventListener('input', function () {
+                hideError(passwordInput, passwordRequiredError);
+            });
+
+            const loginButton = document.querySelector('.login-form button');
+            loginButton.addEventListener('click', validateForm);
+        });
+    </script>
+</body>
+</html>

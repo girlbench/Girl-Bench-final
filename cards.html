@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls Bench</title>
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            padding: 10px;
+            font-size: 12px;
+            color: #5e17eb;
+        }
+
+        h1 {
+            background-color: hotpink;
+            padding: 20px;
+            height: 70px;
+            margin-top: 30px;
+            width: 100%;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 8px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+        }
+
+        .card {
+            width: 25%;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            color: deeppink;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .card img {
+            max-width: 60px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            text-align: center;
+            padding-top: 8px;
+            font-size: 14px;
+        }
+
+        .texto1 {
+            font-size: 30px;
+        }
+
+        .texto2 {
+            padding-bottom: 50px;
+        }
+
+        #botaoVoltar {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .seta {
+            width: 40px;
+            background-color: transparent;
+        }
+
+        @media only screen and (max-width: 768px) {
+            h1 {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            .card {
+                width: 45%;
+                margin: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            h1 {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .card {
+                width: 80%;
+                margin: 10px;
+            }
+
+            .card img {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html" id="botaoVoltar"><img class="seta" src="—Pngtree—left arrow line black icon_4008085.png" alt=""></a>
+
+    <h1 class="texto1">ACESSO RÁPIDO PARA VOCÊ</h1>
+
+    <div class="card-container">
+        <div class="card"  onclick="mudarCor(this)">
+            <img src="card 1.png" alt="Imagem 1">
+            <h2>FALE CONOSCO</h2>
+        </div>
+
+        <div class="card"  onclick="mudarCor(this)">
+            <img src="card 2.png" alt="Imagem 2">
+            <h2>2ª VIA DO BOLETO</h2>
+        </div>
+
+        <div class="card" onclick="mudarCor(this)">
+            <img src="card 3.png" alt="Imagem 3">
+            <h2>PAGAMENTOS</h2>
+        </div>
+
+        <div class="card"  onclick="mudarCor(this)">
+            <img src="card 4.png" alt="Imagem 4">
+            <h2>DESBLOQUEIO DE CARTÃO</h2>
+        </div>
+
+        <div class="card"  onclick="mudarCor(this)">
+            <img src="card 5.png" alt="Imagem 5">
+            <h2>RENEGOCIAÇÃO DE DÍVIDAS</h2>
+        </div>
+
+        <div class="card" onclick="mudarCor(this)">
+            <img src="card 6.png" alt="Imagem 6">
+            <h2>PIX</h2>
+        </div>
+    </div>
+    <script>
+        function mudarCor(cartao) {
+            cartao.style.backgroundColor = 'lightblue';
+        }
+
+        document.getElementById('adicionarCartao').addEventListener('click', function() {
+            adicionarNovoCartao();
+        });
+    </script>
+
+</body>
+</html>
+

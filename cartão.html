@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Cartão</title>
+    <style>
+        img{
+            display:flex;
+            width: 400px;
+            margin:45px;
+            border-radius: 8px;
+            margin-left: 400px;
+        }
+        body{
+            background-color: deeppink;
+        }
+        H1{
+            font-size:50px;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .rosa{
+            color:rgb(212, 14, 120);
+            background-color:rgb(235, 151, 193);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 500px;
+            height: 190px;
+            margin: -560px auto;
+            margin-right: 80px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+        .roxo{
+            color:rgb(212, 14, 120);
+            background-color:rgb(235, 151, 193);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 500px;
+            height: 195px;
+            margin: 50px auto;
+            margin-right: 80px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+        .dourado{
+            color:rgb(212, 14, 120);
+            background-color:rgb(235, 151, 193);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 500px;
+            height: 195px;
+            margin: 326px auto;
+            margin-right: 80px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+        #botaoVoltar {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .seta{
+            width: 40px;
+            background-color: transparent;
+            margin-left: -25px;
+            margin: 10px;
+
+        }
+        
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .rosa, .roxo, .dourado {
+            width: 80%; 
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        @media screen and (max-width: 600px) {
+            img {
+                width: 80%;
+            }
+
+            .rosa, .roxo, .dourado {
+                width: 70%;
+            }
+
+            H1 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" id="botaoVoltar"><img class="seta" src="—Pngtree—left arrow line black icon_4008085.png" alt=""></a>    
+    </header>
+    <h1>ESCOLHA SEU CARTÃO!</h1>
+
+    <div class="card-container">
+        <img class="img1" src="Cartão.C.png">
+        <div class="rosa">
+            <h2>BENEFÍCIOS</h2>
+
+            <ul>
+                <li>Várias possibilidades para você pagar suas compras ao longo do tempo </li>
+                <li>Agilidade </li>
+                <li>Ajuda nas emergências</li>
+                <li>Segurança</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <img class="img2" src="Cartão.d.png">
+        <div class="roxo">
+            <h2>BENEFÍCIOS</h2>
+            <ul>
+                <li>Não ultrapassa o limite financeiro </li>
+                <li>Forma muito segura de pagar suas contas, seja online ou offline</li>
+                <li>Anuidade zero</li>
+                <li>Aceitação em qualquer Banco, 24H para saques</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <img class="img3" src="cartao.cd.png">
+        <div class="dourado">
+            <h2>BENEFÍCIOS</h2>
+            <ul>
+                <li>Várias possibilidades para você pagar suas compras ao longo do tempo </li>
+                <li>Agilidade </li>
+                <li>Ajuda nas emergências</li>
+                <li>Segurança</li>
+                <li>Anuidade zero</li>
+                <li>Aceitação em qualquer Banco, 24H para saques</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function addNewCard(cardClass, title, benefits) {
+                const cardContainer = document.createElement('div');
+                cardContainer.classList.add('card-container');
+
+                const cardDetails = document.createElement('div');
+                cardDetails.classList.add(cardClass);
+
+                const cardTitle = document.createElement('h2');
+                cardTitle.textContent = title;
+
+                const benefitsList = document.createElement('ul');
+                benefits.forEach(benefit => {
+                    const li = document.createElement('li');
+                    li.textContent = benefit;
+                    benefitsList.appendChild(li);
+                });
+
+                cardDetails.appendChild(cardTitle);
+                cardDetails.appendChild(benefitsList);
+
+                cardContainer.appendChild(cardDetails);
+
+                cardContainer.addEventListener('mouseover', function () {
+                    alert('Venha ser Girl Bench!');
+                });
+
+                document.body.appendChild(cardContainer);
+            }
+
+            const newCardBenefits = [
+                'Já pensou em qual?',
+            ];
+
+            addNewCard('novoCartao', 'Escolha seu Cartão', newCardBenefits);
+        });
+    </script>
+    
+</body>
+</html>
+

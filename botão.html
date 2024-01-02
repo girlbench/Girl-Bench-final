@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão de Voltar</title>
+</head>
+<body>
+
+<div id="botaoVoltar" onclick="voltarPagina()">
+  <input type="button" value="Voltar ao Inicio">
+</div>
+<a href="index.html" id="botaoVoltar"></a>
+
+<script>
+  function voltarPagina() {
+    
+    window.history.back();
+  }
+</script>
+
+</body>
+</html>
+
+<!-- <script>
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  
+    function validateForm() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('senha').value;
+  
+      const emailRequiredError = document.getElementById('email-required-error');
+      const emailInvalidError = document.getElementById('email-invalid-error');
+      const passwordRequiredError = document.getElementById('password-required-error');
+      const passwordMinLengthError = document.getElementById('password-min-length-error');
+  
+      emailRequiredError.style.display = 'none';
+      emailInvalidError.style.display = 'none';
+      passwordRequiredError.style.display = 'none';
+      passwordMinLengthError.style.display = 'none';
+  
+      if (!email) {
+        emailRequiredError.style.display = 'block';
+      } else if (!validateEmail(email)) {
+        emailInvalidError.style.display = 'block';
+      }
+  
+      if (!password) {
+        passwordRequiredError.style.display = 'block';
+      } else if (password.length < 8) {
+        passwordMinLengthError.style.display = 'block';
+      }
+  
+      if (emailRequiredError.style.display === 'block' || emailInvalidError.style.display === 'block' || 
+          passwordRequiredError.style.display === 'block' || passwordMinLengthError.style.display === 'block') {
+        return false;
+      }
+  
+      return true;
+    }
+    </script> -->

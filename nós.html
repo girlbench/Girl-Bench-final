@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quem somos</title>
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #8B008B;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .member {
+            background-color: #fff;
+            border: 1px solid #8B008B;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #8B008B;
+        }
+        
+        h1{
+            align-items: center;
+            color:rgb(250, 86, 155)
+
+        }
+        #botaoVoltar {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .seta{
+            width: 40px;
+            background-color: transparent;
+            margin-left: -25px;
+        }
+        .selected {
+            background-color: #f0f0f0;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            header {
+                padding: 10px;
+            }
+            .member {
+                margin: 10px;
+                padding: 10px;
+            }
+            #botaoVoltar {
+                top: 10px;
+                left: 7px;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" id="botaoVoltar"><img class="seta" src="—Pngtree—left arrow line black icon_4008085.png" alt=""></a>
+        <h1>Entenda melhor quem somos!</h1>
+    </header>
+    <section class="member" id="sthefany">
+        <h2>Sthefany</h2>
+        <p>Idade: 17 anos</p>
+        <p>Área de Estudo: Informática</p>
+        <p>Contato: 84-98900000</p>
+    </section>
+    <section class="member" id="Nauany">
+        <h2>Nauany</h2>
+        <p>Idade: 17 anos</p>
+        <p>Área de Estudo: Informática</p>
+        <p>Contato: 84-98904400</p>
+    </section>
+    <section class="member" id="Maria">
+        <h2>Maria</h2>
+        <p>Idade: 17 anos</p>
+        <p>Área de Estudo: Informática</p>
+        <p>Contato: 84-98900114</p>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function clearSelection() {
+                var sections = document.querySelectorAll('.member');
+                sections.forEach(function (section) {
+                    section.classList.remove('selected');
+                });
+            }
+
+            var sections = document.querySelectorAll('.member');
+            sections.forEach(function (section) {
+                section.addEventListener('click', function () {
+                    clearSelection(); 
+                    section.classList.add('selected'); 
+                });
+            });
+        });
+    </script>
+</body>
+</html>
